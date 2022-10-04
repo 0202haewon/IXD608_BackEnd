@@ -1,0 +1,345 @@
+/* CSS reset */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Montserrat&display=swap');
+*, *::after,**::before {
+	box-sizing:  border-box;
+}
+:root {
+	--color-main-light: #BDA665;
+	--color-main-medium: #9F812E;
+	--color-main-dark: #111111;
+
+	--color-black: #111111;
+	--color-white: #fff;
+
+	--header-height: 3ren;
+	--spacing: 1ren;
+
+	--font-serif: 'Cormorant', serif;
+	--font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+	margin: 0 10 30 0;
+	font-size: 100%;
+	font-family: var(--font-sans);
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: var(--font-serif);
+}
+a {
+	color: inherit;
+	font-weight: 700;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* layout classes */
+
+.container {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.display-flex {
+	display: flex;
+}
+.sidplay-inline-flex {
+	display: inline-flex;
+}
+.display-block {
+	display: block;
+}
+.display-inline-block {
+	display: inline-block;
+}
+
+.flex-stretch {
+	flex: 1 1 auto;
+}
+.flex-none {
+	flex: none;
+}
+.flex-align-center {
+	align-items: center;
+}
+.flex-justify-center {
+	justify-content: center;
+}
+
+
+
+/* small classes */
+.media-image {
+	max-width: 100%;
+	vertical-align: text-bottom;
+}
+
+
+/* components */
+
+.nav ul {
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+    .nav a {
+    	display: block;
+    	padding: 0.2em 0.5em;
+    }
+    .nav a:hover {
+    	background-color: var(--color-main-medium);
+    	color: var(--color-white);
+    	text-decoration: none;
+    }
+    .nav .active a {
+    	background-color: var(--color-main-light);
+    	color: inherit;
+    }
+.nav-material ul,
+.nav-crumbs ul,
+.nav-stretch ul,
+.nav-pills ul,
+.nav-flex ul {
+    display: flex;
+}
+.nav-material li,
+.nav-stretch li {
+    flex: 1 1 auto;
+    text-align: center;
+}
+.nav-pills a {
+	border-radius: 2em;
+	padding: 0.5em 1em;
+}
+.nav-crumbs a {
+	display: inline-block;
+}
+.nav-crumbs .active a,
+.nav-crumbs a:hover {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: underline;
+}
+.nav-crumbs li:not(:first-child)::before {
+	content: '/';
+}
+.nav-material a {
+	padding: 0.5em 1em;
+	position: relative;
+}
+.nav-material .active a {
+	background-color: transparent;
+	color: inherit;
+}
+.nav-material a:hover {
+	background-color: var(--color-main-light);
+	color: inherit;
+}
+.nav-material a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: var(--color-main-medium);
+	transition: all 0.3s;
+}
+.nav-material .active a::after {
+	height: 4px;
+}
+
+
+
+.navbar {
+	background-color: var(--color-neutral-dark);
+	color: var(--color-white);
+	line-height: var(--header-height);
+}
+    .navbar h1 {
+    	font-size: 1em;
+    	margin: 0;
+    	font-family: var(--font-sans);
+    }
+    .navbar a {
+    	padding: 0 0.5em;
+    }
+
+/* Button */ 
+.button {
+	border-radius: 2em;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 40px;
+	gap: 10px;
+	background-color: transparent;
+	text-transform: uppercase;
+	border: 2px solid var(--color-main-light);
+	color: var(--color-main-light);
+	font-weight: 700;
+	line-height: 16px;
+	letter-spacing: 0.15em;
+	overflow: hidden;
+	transition: 0.3s;
+}
+.button:hover {
+	background-color:var(--color-main-light);
+	color: var(--color-white);
+}
+.button.border {
+	border: 2px solid var(--color-main-medium);
+	color: var(--color-main-medium);
+}
+.button.border:hover {
+	background-color:var(--color-main-medium);
+	color: var(--color-white);
+}
+.button.light {
+	background-color:var(--color-main-light);
+	color: var(--color-white);
+}
+.button.light:hover {
+	background-color:transparent;
+	color: var(--color-main-light);
+}
+.button.dark {
+	border: 2px solid var(--color-main-medium);
+	background-color:var(--color-main-medium);
+	color: var(--color-white);
+}
+.button.dark:hover{
+		background-color:transparent;
+	color: var(--color-main-medium);
+}
+
+
+/* Card */ 
+.card {
+	border-radius: 1em;
+	background-color: var(--color-white);
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+
+	overflow: hidden;
+	position: relative;
+}
+.card.soft {
+	box-shadow:  0 0 10px rgba(0,0,0,0.1);
+	border-radius: 1em;
+}
+.card.hard {
+	border: 2px solid var(--color-main-medium);
+	border-radius: 1em;
+}
+.card.dark {
+	background-color:var(--color-main-dark);
+	color: var(--color-white);
+}
+.card.medium {
+	background-color:var(--color-main-medium);
+}
+.card.flat {
+	padding: 0;
+}
+.view-window {
+	border-radius: 1em;
+	height: 50vh;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.table th,.table td {
+	text-align: left;
+	padding: 0.2em 0.5em;
+}
+.table.striped tbody tr:nth-child(odd){
+	background-color: var(--color-main-light);
+}
+.table.lined.all th:not(:first-child),
+.table.lined.all td:not(:first-child),
+.table.lined.vertical th:not(:first-child),
+.table.lined.vertical td:not(:first-child){
+	border-left: 1px solid var(--color-main-medium);
+}
+.table.lined.all tbody tr,
+.table.lined.horizontal tbody tr{
+	border-top: 1px solid var(--color-main-medium);
+}
+
+.table.lined.all,
+.table.lined.border {
+	border: 1px solid var(--color-main-medium);
+}
+
+.figure {
+	margin: 0;
+	background-color: var(--color-white);
+
+}
+.figure img {
+	width: 100%;
+	vertical-align: text-bottom;
+}
+.figure figcaption {
+	display: inline-block;
+	width: 100%;
+	vertical-align: text-bottom;
+	font-family: var(--font-serif);
+}
+
+.figure.product{
+	text-align: center;
+	border-radius: 0 !important ;
+}
+
+.figure.product .image {
+	position: relative;
+	margin-bottom: 5px;
+}
+.figure.product .image h4 {
+	width: 100%;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-family: var(--font-sans);
+    font-weight: 800;
+    -webkit-text-stroke: 0.7px var(--color-offwhite);
+}
+.figure.product form {
+	margin-bottom: 1em;
+}
+
+.figure.product form input {
+	width: 70%;
+}
+
+.figure.product form .value-button {
+  display: inline-block;
+  border: 2px solid var(--color-main-light);
+  width: 10%;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  background: var(--color-main-light);
+  color: white;
+}
+
+.figure.product form .value-button:hover {
+	background:transparent;
+	color: var(--color-main-light);
+}
