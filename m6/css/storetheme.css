@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Montserrat&display=swap');
 :root {
 	--color-offwhite: #fff;
-	--color-background-gradient: linear-gradient(360deg, rgba(250, 243, 233, 0.624) 15.2%, rgba(255, 255, 255, 0.8) 60.21%);
+	--color-background: #F1EBDA;
 	--color-theme: #9F812E;
 	--color-theme-dark: #111111;
 	--color-theme-medium: #9F812E;
@@ -13,7 +13,7 @@
 }
 
 body {
-	background: var(--color-background-gradient);
+	background: var(--color-background);
 }
 
 @media(max-width: 810px){
@@ -34,22 +34,25 @@ body {
 		line-height: 1.5em;
 	}
 }
-.figure.product{
-	border-radius: 0.5em;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.figure.product {
+	border-radius: 1.5em;
+	box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 }
+
 .product-overlay {
 	position: relative;
 	overflow: hidden;
+	border-radius: 1.5em;
 }
-.product-overlay figcaption{
+
+.product-overlay figcaption {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.75);
 	opacity: 0;
 	transition: all 0.3s;
 	display: flex;
@@ -57,10 +60,13 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	padding: 0;
+	color: var(--color-white);
 }
-.product-overlay:hover figcaption{
+
+.product-overlay:hover figcaption {
 	opacity: 1;
 }
+
 .product-overlay .caption-body {
 	background-color: #fff;
 	border-radius: 0.5em;
@@ -68,19 +74,22 @@ body {
 	transform: translateY(2em);
 	transition: all 0.3s;
 }
+
 .product-overlay:hover .caption-body {
 	transform: translateY(0);
 }
+
 .product-overlay img {
 	transform: scale(1,1);
 	transition: all 0.3s;
 }
+
 .product-overlay:hover img {
 	transform: scale(1.4,1.4);
 }
 
-@media(max-width: 600px){
-	.product-overlay figcaption{
+@media(max-width: 600px) {
+.product-overlay figcaption {
 	position: relative;
 	display: block;
 	top: initial;
@@ -90,12 +99,11 @@ body {
 	opacity: 1;
 	background-color: initial;
 }
-	.product-overlay .caption-body{
-		transform: none;
-		padding: 0;
-	}
+.product-overlay .caption-body {
+	transform: none;
+	padding: 0;
+}	
 }
-
 
 h1 {
 	color: var(--color-theme-dark);
@@ -199,7 +207,7 @@ h1 {
 }
 
 .favorite input:checked + label {
-	color: #E90000;
+	color: #D01B00;
 	transform: scale(1.5, 1.5);
 }
 
